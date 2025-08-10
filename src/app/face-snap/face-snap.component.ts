@@ -1,7 +1,7 @@
-import {Component, input, Input} from '@angular/core';
-import {FaceSnap} from "../models/face-snap";
-import {UpperCasePipe} from "@angular/common";
-import {Router} from "@angular/router";
+import { Component, input, Input } from '@angular/core';
+import { FaceSnap } from "../models/face-snap";
+import { UpperCasePipe } from "@angular/common";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-face-snap',
@@ -12,9 +12,11 @@ import {Router} from "@angular/router";
 
 export class FaceSnapComponent {
     @Input() faceSnap!: FaceSnap;
+
     // faceSnap = input.required<FaceSnap>();
 
-    constructor(private router: Router) {}
+    constructor(private router: Router) {
+    }
 
     onViewFaceSnap() {
         this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`);

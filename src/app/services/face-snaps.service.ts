@@ -1,6 +1,6 @@
-import {Injectable} from "@angular/core";
-import {FaceSnap} from "../models/face-snap";
-import {SnapType} from "../models/snap-type.type";
+import { Injectable } from "@angular/core";
+import { FaceSnap } from "../models/face-snap";
+import { SnapType } from "../models/snap-type.type";
 
 @Injectable({
     providedIn: 'root'

@@ -1,4 +1,4 @@
-import {SnapType} from "./snap-type.type";
+import { SnapType } from "./snap-type.type";
 
 export class FaceSnap {
 
@@ -24,6 +24,7 @@ export class FaceSnap {
     addSnap(): void {
         this.snaps++;
     }
+
     removeSnap(): void {
         this.snaps--;
     }
