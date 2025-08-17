@@ -1,27 +1,26 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FaceSnap } from "../models/face-snap";
-import { FaceSnapComponent } from "../face-snap/face-snap.component";
-import { FaceSnapService } from "../services/face-snaps.service";
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { FaceSnap } from "../../core/models/face-snap";
+import { FaceSnapSimpleCard } from "../face-snap-simple-card/face-snap-simple-card";
+import { FaceSnapApi } from "../../core/services/face-snap-api";
 import { interval, Observable, Subject, takeUntil, tap } from "rxjs";
 import { AsyncPipe } from "@angular/common";
 
 @Component({
-    selector: 'app-face-snap-list',
+    selector: 'app-face-snap-simple-card-list',
     imports: [
-        FaceSnapComponent,
+        FaceSnapSimpleCard,
         AsyncPipe
     ],
-    templateUrl: './face-snap-list.component.html',
-    styleUrl: './face-snap-list.component.scss'
+    templateUrl: './face-snap-list.html',
+    styleUrl: './face-snap-list.scss'
 })
 
-export class FaceSnapListComponent implements OnInit/*, OnDestroy*/ {
+export class FaceSnapList implements OnInit/*, OnDestroy*/ {
+
+    private faceSnapService = inject(FaceSnapApi);
 
     faceSnaps$!: Observable<FaceSnap[]>;
     // private destroy$!: Subject<boolean>;
-
-    constructor(private faceSnapService: FaceSnapService) {
-    }
 
     ngOnInit(): void {
         this.faceSnaps$ = this.faceSnapService.getFaceSnaps();

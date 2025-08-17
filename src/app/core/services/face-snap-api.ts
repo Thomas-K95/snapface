@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, inject } from "@angular/core";
 import { FaceSnap } from "../models/face-snap";
 import { SnapType } from "../models/snap-type.type";
 import { HttpClient } from "@angular/common/http";
@@ -8,10 +8,9 @@ import { map, Observable, switchMap } from "rxjs";
     providedIn: 'root'
 })
 
-export class FaceSnapService {
+export class FaceSnapApi {
+    private http = inject(HttpClient);
 
-    constructor(private http: HttpClient) {
-    }
 
     getFaceSnaps(): Observable<FaceSnap[]> {
         return this.http.get<FaceSnap[]>('http://localhost:3000/facesnaps');
