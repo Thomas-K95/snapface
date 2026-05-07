@@ -1,12 +1,10 @@
 import { Injectable, inject } from "@angular/core";
-import { FaceSnap } from "../models/face-snap";
-import { SnapType } from "../models/snap-type.type";
+import { FaceSnap } from "./models/face-snap";
+import { SnapType } from "./models/snap-type.type";
 import { HttpClient } from "@angular/common/http";
 import { map, Observable, switchMap } from "rxjs";
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 
 export class FaceSnapApi {
     private http = inject(HttpClient);

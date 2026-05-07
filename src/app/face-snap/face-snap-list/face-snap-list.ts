@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
-import { FaceSnap } from "../../core/models/face-snap";
+import { FaceSnap } from "../models/face-snap";
 import { FaceSnapSimpleCard } from "../face-snap-simple-card/face-snap-simple-card";
-import { FaceSnapApi } from "../../core/services/face-snap-api";
+import { FaceSnapApi } from "../face-snap-api";
 import { interval, Observable, Subject, takeUntil, tap } from "rxjs";
 import { AsyncPipe } from "@angular/common";
 

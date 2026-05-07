@@ -1,5 +1,5 @@
 import { Component, input, inject } from '@angular/core';
-import { FaceSnap } from "../../core/models/face-snap";
+import { FaceSnap } from "../models/face-snap";
 import { UpperCasePipe } from "@angular/common";
 import { Router } from "@angular/router";
 

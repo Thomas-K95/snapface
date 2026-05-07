@@ -8,7 +8,8 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from "@angular/common/http";
-import { authInterceptor } from "./core/interceptors/auth-interceptor";
+import { authInterceptor } from "./auth/auth-interceptor";
+import { FaceSnapApi } from "./face-snap/face-snap-api";
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -18,6 +19,7 @@ export const appConfig: ApplicationConfig = {
         provideHttpClient(
             withInterceptors([authInterceptor])
         ),
+        FaceSnapApi,
         { provide: LOCALE_ID, useValue: 'fr-FR' }
     ]
 };

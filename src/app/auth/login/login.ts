@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { AuthApi } from "../../core/services/auth-api";
+import { Component, inject } from '@angular/core';
+import { AuthStore } from "../auth-store";
 import { Router } from "@angular/router";
 
 @Component({
@@ -8,14 +8,10 @@ import { Router } from "@angular/router";
   templateUrl: './login.html',
   styleUrl: './login.scss'
 })
-export class Login implements OnInit {
+export class Login {
 
-  private authApi = inject(AuthApi);
+  private authApi = inject(AuthStore);
   private router = inject(Router);
-
-  ngOnInit(): void {
-        throw new Error("Method not implemented.");
-    }
 
   login(): void {
     this.authApi.login();

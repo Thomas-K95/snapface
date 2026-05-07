@@ -4,7 +4,7 @@ import { Injectable } from "@angular/core";
     providedIn: 'root'
 })
 
-export class AuthApi {
+export class AuthStore {
     private token!: string;
 
     login(): void {

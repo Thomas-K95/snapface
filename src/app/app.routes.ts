@@ -9,6 +9,4 @@ export const routes: Routes = [
         loadChildren: () => import('./face-snap/face-snap.routes').then(r => r.routes)
     },
     { path: 'auth', children: authRoutes },
-
-
 ];
